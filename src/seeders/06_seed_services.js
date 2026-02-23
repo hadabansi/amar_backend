@@ -1,0 +1,178 @@
+/**
+ * Seed services
+ * @param {import('knex').Knex} knex
+ */
+exports.seed = async function(knex) {
+  // Delete existing entries
+  await knex('services').where('isDeleted', false).del();
+
+  // Insert seed data
+  await knex('services').insert([
+    {
+      title: 'Wedding Photo & Video',
+      description: 'Comprehensive wedding coverage with both photography and videography services. Capture every moment of your special day with our professional team.',
+      icon: '💒',
+      features: JSON.stringify([
+        'Full day coverage',
+        'Professional photo & video team',
+        'Drone footage',
+        'Highlight video',
+        'All edited photos',
+      ]),
+      price: 'Custom Package',
+      isActive: true,
+      displayOrder: 1,
+      isDeleted: false,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    },
+    {
+      title: 'Wedding Photography Only',
+      description: 'Professional wedding photography services. Beautiful, timeless photos that tell your love story.',
+      icon: '📸',
+      features: JSON.stringify([
+        'Full day photography',
+        'Candid & posed shots',
+        'Professional editing',
+        'Digital album',
+        'Print-ready images',
+      ]),
+      price: 'From ₹50,000',
+      isActive: true,
+      displayOrder: 2,
+      isDeleted: false,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    },
+    {
+      title: 'Wedding Videography Only',
+      description: 'Cinematic wedding videography that captures your special day in motion. Professional editing and storytelling.',
+      icon: '🎥',
+      features: JSON.stringify([
+        'Full day videography',
+        'Cinematic editing',
+        'Highlight reel',
+        'Full ceremony coverage',
+        'Drone footage available',
+      ]),
+      price: 'From ₹40,000',
+      isActive: true,
+      displayOrder: 3,
+      isDeleted: false,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    },
+    {
+      title: 'Portrait Sessions',
+      description: 'Professional portrait photography for individuals and families. Studio or outdoor locations available.',
+      icon: '👤',
+      features: JSON.stringify([
+        '1-2 hour session',
+        'Multiple outfit changes',
+        'Professional lighting',
+        'Retouched images',
+        'Digital delivery',
+      ]),
+      price: 'From ₹5,000',
+      isActive: true,
+      displayOrder: 4,
+      isDeleted: false,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    },
+    {
+      title: 'Event Photo & Video',
+      description: 'Complete coverage for corporate events, parties, and celebrations with both photo and video services.',
+      icon: '🎉',
+      features: JSON.stringify([
+        'Event coverage',
+        'Photo & video team',
+        'Edited highlights',
+        'Same-day previews available',
+        'Social media ready content',
+      ]),
+      price: 'From ₹15,000',
+      isActive: true,
+      displayOrder: 5,
+      isDeleted: false,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    },
+    {
+      title: 'Commercial Photo & Video',
+      description: 'Professional photography and videography for businesses, products, and marketing materials.',
+      icon: '🏢',
+      features: JSON.stringify([
+        'Product photography',
+        'Corporate headshots',
+        'Marketing videos',
+        'Brand content creation',
+        'Commercial usage rights',
+      ]),
+      price: 'Custom Quote',
+      isActive: true,
+      displayOrder: 6,
+      isDeleted: false,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    },
+    {
+      title: 'Engagement Photo & Video',
+      description: 'Beautiful engagement session with photography and videography to celebrate your love story.',
+      icon: '💑',
+      features: JSON.stringify([
+        'Pre-wedding shoot',
+        'Multiple locations',
+        'Outfit changes',
+        'Cinematic video',
+        'Save-the-date cards',
+      ]),
+      price: 'From ₹12,000',
+      isActive: true,
+      displayOrder: 7,
+      isDeleted: false,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    },
+    {
+      title: 'Maternity & Newborn',
+      description: 'Gentle and beautiful photography celebrating new life and motherhood.',
+      icon: '👶',
+      features: JSON.stringify([
+        'Maternity sessions',
+        'Newborn photography',
+        'Family portraits',
+        'Studio or home',
+        'Props & styling included',
+      ]),
+      price: 'From ₹8,000',
+      isActive: true,
+      displayOrder: 8,
+      isDeleted: false,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    },
+    {
+      title: 'Video Production',
+      description: 'Professional video production services for businesses, documentaries, and creative projects.',
+      icon: '🎬',
+      features: JSON.stringify([
+        'Concept development',
+        'Professional filming',
+        'Post-production editing',
+        'Color grading',
+        'Sound design',
+      ]),
+      price: 'Custom Quote',
+      isActive: true,
+      displayOrder: 9,
+      isDeleted: false,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    },
+  ]);
+
+  console.log('Services seeded successfully');
+};
+
+
