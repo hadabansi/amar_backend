@@ -8,7 +8,7 @@ exports.up = function(knex) {
     table.string('title', 100).notNullable();
     table.text('description').notNullable();
     table.string('icon', 50).defaultTo('📸');
-    table.json('features').defaultTo('[]');
+    table.json('features').nullable();
     table.string('price', 50).nullable();
     table.boolean('isActive').defaultTo(true);
     table.integer('displayOrder').defaultTo(0);
